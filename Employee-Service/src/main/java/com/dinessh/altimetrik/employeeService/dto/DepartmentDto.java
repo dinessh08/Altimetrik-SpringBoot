@@ -1,4 +1,4 @@
-package com.dinessh.altimetrik.departmentService.dto;
+package com.dinessh.altimetrik.employeeService.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

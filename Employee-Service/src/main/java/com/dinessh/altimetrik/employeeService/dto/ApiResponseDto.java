@@ -7,11 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class EmployeeDto {
+public class ApiResponseDto {
 
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String departmentCode;
+    private EmployeeDto employeeDto;
+    private DepartmentDto departmentDto;
 }

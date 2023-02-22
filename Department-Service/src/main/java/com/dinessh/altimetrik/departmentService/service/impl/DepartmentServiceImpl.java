@@ -31,4 +31,12 @@ public class DepartmentServiceImpl implements com.dinessh.altimetrik.departmentS
         DepartmentDto dto = this.modelMapper.map(savedDepartment, DepartmentDto.class);
         return dto;
     }
+
+    @Override
+    public DepartmentDto getDepartmentByDepartmentCode(String departmentCode) {
+
+        Department savedDepartment = repo.findByDepartmentCode(departmentCode);
+        DepartmentDto dto = this.modelMapper.map(savedDepartment, DepartmentDto.class);
+        return dto;
+    }
 }

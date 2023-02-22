@@ -1,5 +1,6 @@
 package com.dinessh.altimetrik.employeeService.controller;
 
+import com.dinessh.altimetrik.employeeService.dto.ApiResponseDto;
 import com.dinessh.altimetrik.employeeService.dto.EmployeeDto;
 import com.dinessh.altimetrik.employeeService.service.EmployeeService;
 import lombok.AllArgsConstructor;
@@ -22,9 +23,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/{employeeId}")
-    public ResponseEntity<EmployeeDto> getEmployeeByEmail(@PathVariable long employeeId) {
+    public ResponseEntity<ApiResponseDto> getEmployeeById(@PathVariable long employeeId) {
 
-        EmployeeDto employeeDto = service.getEmployeeById(employeeId);
-        return new ResponseEntity<>(employeeDto, HttpStatus.OK);
+        ApiResponseDto apiResponseDto = service.getEmployeeById(employeeId);
+        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
     }
 }

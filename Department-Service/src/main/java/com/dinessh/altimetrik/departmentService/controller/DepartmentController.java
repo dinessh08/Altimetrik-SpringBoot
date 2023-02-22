@@ -3,7 +3,6 @@ package com.dinessh.altimetrik.departmentService.controller;
 import com.dinessh.altimetrik.departmentService.dto.DepartmentDto;
 import com.dinessh.altimetrik.departmentService.service.DepartmentService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +21,17 @@ public class DepartmentController {
         return new ResponseEntity<>(savedDto, HttpStatus.OK);
     }
 
-    @GetMapping("/{departmentId}")
+    /*@GetMapping("/{departmentId}")
     public ResponseEntity<DepartmentDto> getDepartmentById(@PathVariable("departmentId") long departmentId) {
 
         DepartmentDto savedDto = service.getDepartmentById(departmentId);
+        return new ResponseEntity<>(savedDto, HttpStatus.OK);
+    }
+*/
+    @GetMapping("/{departmentCode}")
+    public ResponseEntity<DepartmentDto> getDepartmentByCode(@PathVariable("departmentCode") String departmentCode) {
+
+        DepartmentDto savedDto = service.getDepartmentByDepartmentCode(departmentCode);
         return new ResponseEntity<>(savedDto, HttpStatus.OK);
     }
 }
