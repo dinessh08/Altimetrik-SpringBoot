@@ -39,8 +39,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         String departmentCode = employeeDto.getDepartmentCode();
         //DepartmentDto departmentDto = restTemplate.getForEntity("http://localhost:8070/api/department/" + departmentCode, DepartmentDto.class).getBody();
-        DepartmentDto departmentDto = webClient.get().uri("http://localhost:8070/api/department/" + departmentCode).retrieve().bodyToMono(DepartmentDto.class).block();
-        //DepartmentDto departmentDto = apiClient.getDepartmentByCode(departmentCode);
+        //DepartmentDto departmentDto = webClient.get().uri("http://localhost:8070/api/department/" + departmentCode).retrieve().bodyToMono(DepartmentDto.class).block();
+        DepartmentDto departmentDto = apiClient.getDepartmentByCode(departmentCode);
         ApiResponseDto responseDto = new ApiResponseDto();
         responseDto.setEmployeeDto(employeeDto);
         responseDto.setDepartmentDto(departmentDto);
